@@ -13,16 +13,16 @@ using namespace std;
 int main(int argc, char **argv)
 {
     if (argc==1) {
-        cout << "Parametrs:\n a - среднее арифметическое\n m  - медиана\n у нас 9-11 операнд\n";
+        cout << "Parametrs:\n -a - среднее арифметическое\n -m  - медиана\n у нас 5-7 операнд\n";
         exit(1);
     }
 
-    int opt, i, d, st=0, k=1;
+    int opt, i, st=0, k=1;
     float z, a=0, b, res;
     for (i=2; i<argc; i++){
         st+=1;
     }
-    if ((st < 9) or (st > 11)){
+    if ((st < 5) or (st > 7)){
         return 0;
     }
     while ((opt = getopt (argc, argv, "a:m:")) != -1) {
@@ -43,11 +43,11 @@ int main(int argc, char **argv)
                 arr[i] = b;
             }
             sort(arr.begin(), arr.end());
-            if (argc-2 == 9 or argc-2 == 11) {
+            if (argc-2 == 5 or argc-2 == 7) {
                 int k = ceil((argc-2) / 2);
                 res = arr[k];
             }
-            else if (argc-2 == 10) {
+            else if (argc-2 == 6) {
                 int k = ((argc-2) / 2);
                 z = arr[k-1]+arr[k];
                 res = z / 2;
